@@ -24,6 +24,7 @@ const onMousedown = (e ) => {
 }
 
 document.addEventListener('mousedown',onMousedown)
+mouse.setCanvasSize();// init
 window.addEventListener('resize', mouse.setCanvasSize);
 
 // step4 remember clear
