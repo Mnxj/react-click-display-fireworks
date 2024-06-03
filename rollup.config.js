@@ -4,11 +4,11 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/bundle.cjs.js',
+      file: 'dist/bundle.cjs',
       format: 'cjs'
     },
     {
-      file: 'dist/bundle.esm.js',
+      file: 'dist/bundle.esm',
       format: 'esm'
     }
   ],

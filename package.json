@@ -1,8 +1,8 @@
 {
   "name": "react-click-display-fireworks",
-  "version": "0.1.9",
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.esm.js",
+  "version": "1.0.1",
+  "main": "dist/bundle.cjs",
+  "module": "dist/bundle.esm",
   "types": "dist/Sum.d.ts",
   "description": "The mouse click event of the react+ts version, colorful fireworks effects will appear when the mouse clicks.",
   "license": "MIT",
