@@ -6,6 +6,8 @@
 
 # 2
 ``` js
+// npm i react-click-display-fireworks
+
 // step1
 import MouseClickAnimation from 'react-click-display-fireworks';
 
