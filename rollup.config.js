@@ -1,23 +1,20 @@
-import babel from 'rollup-plugin-babel';
-import postcss from 'rollup-plugin-postcss';
-import resolve from '@rollup/plugin-node-resolve'
-import { terser } from 'rollup-plugin-terser';
-import commonjs from '@rollup/plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: [
     {
-      file: 'dist/bundle.esm.js',
+      file: 'dist/bundle.cjs',
+      format: 'cjs'
+    },
+    {
+      file: 'dist/bundle.esm',
       format: 'esm'
     }
   ],
   plugins: [
-    babel(),
-    postcss(),
-    resolve(),
-    commonjs(),
-    terser()
-  ],
-  external: ['react'],
+    typescript({
+      tsconfig: './tsconfig.json'
+    })
+  ]
 };

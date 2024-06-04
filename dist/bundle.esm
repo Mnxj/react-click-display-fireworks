@@ -1,6 +1,4 @@
-'use strict';
-
-var anime = require('animejs');
+import anime from 'animejs';
 
 var debounce = function (fn, delay) {
     var timer;
@@ -92,4 +90,4 @@ var renderParticule = function (e) {
     }
 };
 
-module.exports = MouseClickAnimation;
+export { MouseClickAnimation as default };

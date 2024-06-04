@@ -1,7 +1,6 @@
-'use strict';
-
-var anime = require('animejs');
-
+"use strict";
+exports.__esModule = true;
+var animejs_1 = require("animejs");
 var debounce = function (fn, delay) {
     var timer;
     return function () {
@@ -37,12 +36,12 @@ var MouseClickAnimation = /** @class */ (function () {
             for (var i = 0; i < 30; i++) {
                 n.push(_this[_createParticule]());
             }
-            anime.timeline().add({
+            animejs_1["default"].timeline().add({
                 targets: n,
                 x: function (e) { return e.endPos.x; },
                 y: function (e) { return e.endPos.y; },
                 radius: 0.1,
-                duration: anime.random(1200, 1800),
+                duration: animejs_1["default"].random(1200, 1800),
                 easing: "easeOutExpo",
                 update: renderParticule
             });
@@ -55,7 +54,7 @@ var MouseClickAnimation = /** @class */ (function () {
             canvasEl.style.height = window.innerHeight + 'px';
             ctx.scale(2, 2);
         }, 500);
-        anime({ duration: 1 / 0, update: function () { return ctx.clearRect(0, 0, canvasEl.width, canvasEl.height); } });
+        animejs_1["default"]({ duration: 1 / 0, update: function () { return ctx.clearRect(0, 0, canvasEl.width, canvasEl.height); } });
         var _a = canvasEl.getBoundingClientRect(), left = _a.left, top = _a.top;
         this.top = top;
         this.left = left;
@@ -66,8 +65,8 @@ var MouseClickAnimation = /** @class */ (function () {
         var ctx = this.ctx;
         return a.x = this.pointerX,
             a.y = this.pointerY,
-            a.color = colors[anime.random(0, colors.length - 1)],
-            a.radius = anime.random(16, 32),
+            a.color = colors[animejs_1["default"].random(0, colors.length - 1)],
+            a.radius = animejs_1["default"].random(16, 32),
             a.endPos = setParticuleDirection(a),
             a.draw = function () {
                 ctx.beginPath();
@@ -79,8 +78,9 @@ var MouseClickAnimation = /** @class */ (function () {
     };
     return MouseClickAnimation;
 }());
+exports["default"] = MouseClickAnimation;
 var setParticuleDirection = function (e) {
-    var t = anime.random(0, 360) * Math.PI / 180, a = anime.random(50, 180), n = [-1, 1][anime.random(0, 1)] * a;
+    var t = animejs_1["default"].random(0, 360) * Math.PI / 180, a = animejs_1["default"].random(50, 180), n = [-1, 1][animejs_1["default"].random(0, 1)] * a;
     return {
         x: e.x + n * Math.cos(t),
         y: e.y + n * Math.sin(t)
@@ -91,5 +91,3 @@ var renderParticule = function (e) {
         e.animatables[t].target.draw();
     }
 };
-
-module.exports = MouseClickAnimation;
